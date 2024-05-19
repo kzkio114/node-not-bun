@@ -3,11 +3,18 @@
   "private": true,
   "scripts": {
     "build": "bun bun.config.js",
-    "build:css": "sass ./app/assets/stylesheets/application.sass.scss:./app/assets/builds/application.css --no-source-map --load-path=node_modules"
+    "build:sass": "bun run sass ./app/assets/stylesheets/application.sass.scss ./app/assets/builds/application.intermediate.css --no-source-map --load-path=node_modules",
+    "build:postcss": "postcss ./app/assets/builds/application.css -o ./app/assets/builds/application.css"
   },
   "dependencies": {
     "@hotwired/stimulus": "^3.2.2",
     "@hotwired/turbo-rails": "^8.0.4",
-    "sass": "^1.77.1"
+    "autoprefixer": "^10.4.19",
+    "daisyui": "^4.11.1",
+    "postcss": "^8.4.38",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "sass": "^1.77.1",
+    "tailwindcss": "^3.4.3"
   }
 }

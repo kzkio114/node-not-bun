@@ -37,15 +37,6 @@ ENV PATH /root/.bun/bin:$PATH
 # アプリケーションのコピー
 COPY . /app
 
-# JavaScriptの依存関係
-# 必要な物を入れて下さい！
-RUN bun add tailwindcss postcss autoprefixer daisyui
-RUN bun add react react-dom
-RUN bun install
-
-# 初期ファイルの作成
-RUN bun tailwindcss init -p
-
 # ポート3000を公開
 EXPOSE 3000
 
